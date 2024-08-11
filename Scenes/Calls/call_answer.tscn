@@ -1,0 +1,198 @@
+[gd_scene load_steps=10 format=3 uid="uid://uq46rsjlbj02"]
+
+[ext_resource type="Script" path="res://Scripts/Calls/call_answer.gd" id="1_c4syq"]
+[ext_resource type="Texture2D" uid="uid://bmxahyi730i6a" path="res://Assets/UI/decline_icon.png" id="1_nyen6"]
+[ext_resource type="AudioStream" uid="uid://jfvxjh7cir1o" path="res://Assets/Audio/Voices/what is simon waffling about.mp3" id="3_4sbae"]
+[ext_resource type="VideoStream" path="res://Assets/Videos/John pork.ogv" id="4_w2uar"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3eor"]
+bg_color = Color(0.176471, 0.176471, 0.176471, 0.690196)
+shadow_color = Color(0, 0, 0, 0.282353)
+shadow_size = 3
+shadow_offset = Vector2(0, 5.845)
+
+[sub_resource type="SystemFont" id="SystemFont_sb7wa"]
+font_names = PackedStringArray("Papyrus")
+
+[sub_resource type="SystemFont" id="SystemFont_03gi8"]
+font_names = PackedStringArray("Arial")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l43co"]
+bg_color = Color(0.239216, 0.239216, 0.239216, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vf1al"]
+bg_color = Color(0.176471, 0.176471, 0.176471, 0.811765)
+shadow_color = Color(0, 0, 0, 0.415686)
+shadow_size = 3
+shadow_offset = Vector2(0, 5.845)
+
+[node name="call_Answer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c4syq")
+
+[node name="pnl_bg" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pnl_top" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 4.0
+offset_bottom = 422.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o3eor")
+
+[node name="lbl_name" type="Label" parent="pnl_top"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = 71.0
+offset_right = 147.0
+offset_bottom = 151.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("SystemFont_sb7wa")
+theme_override_font_sizes/font_size = 50
+text = "[CALLER]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lbl_time" type="Label" parent="pnl_top"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -58.5
+offset_top = -52.0
+offset_right = 58.5
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = SubResource("SystemFont_03gi8")
+theme_override_font_sizes/font_size = 40
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="callTIme" type="Timer" parent="pnl_top/lbl_time"]
+autostart = true
+
+[node name="pnl_icon" type="Panel" parent="pnl_top"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -134.0
+offset_right = 99.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l43co")
+
+[node name="icon" type="TextureRect" parent="pnl_top/pnl_icon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 8.0
+offset_right = -5.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="pnl_bottom" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -225.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vf1al")
+
+[node name="btn_decline" type="Button" parent="pnl_bottom"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_top = -63.5
+offset_right = -32.0
+offset_bottom = 63.5
+grow_horizontal = 0
+grow_vertical = 2
+flat = true
+
+[node name="icon" type="TextureRect" parent="pnl_bottom/btn_decline"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("1_nyen6")
+expand_mode = 1
+
+[node name="voice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4sbae")
+
+[node name="vid" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0111111
+anchor_top = 0.340625
+anchor_right = 0.991667
+anchor_bottom = 0.839844
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("4_w2uar")
+expand = true
+metadata/_edit_use_anchors_ = true
+
+[node name="lblStatus" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.5
+offset_top = -11.5
+offset_right = 39.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "call ended"
+
+[connection signal="timeout" from="pnl_top/lbl_time/callTIme" to="." method="_on_call_t_ime_timeout"]
+[connection signal="pressed" from="pnl_bottom/btn_decline" to="." method="_on_btn_decline_pressed"]
+[connection signal="finished" from="voice" to="." method="_on_voice_finished"]
+[connection signal="finished" from="vid" to="." method="_on_vid_finished"]

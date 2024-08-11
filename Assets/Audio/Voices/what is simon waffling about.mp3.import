@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jfvxjh7cir1o"
+path="res://.godot/imported/what is simon waffling about.mp3-ca77e99e3d36e4586ef3f29e9e1e2646.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Voices/what is simon waffling about.mp3"
+dest_files=["res://.godot/imported/what is simon waffling about.mp3-ca77e99e3d36e4586ef3f29e9e1e2646.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

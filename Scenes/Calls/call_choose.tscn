@@ -1,0 +1,188 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnjtw6v2gd5rv"]
+
+[ext_resource type="Script" path="res://Scripts/Calls/call_choose.gd" id="1_v3eve"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6iu0"]
+bg_color = Color(0.254902, 0.254902, 0.254902, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c74qd"]
+bg_color = Color(0.160784, 0.160784, 0.160784, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.254902, 0.254902, 0.254902, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfpix"]
+bg_color = Color(0.298039, 0.105882, 0.211765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uek1w"]
+bg_color = Color(0.470588, 0.168627, 0.333333, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 3
+shadow_offset = Vector2(0, 0.66)
+
+[node name="call_Choose" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v3eve")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.176471, 0.0627451, 0.12549, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -37.0
+offset_right = 127.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n6iu0")
+
+[node name="chooseBTN" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -15.5
+offset_right = 50.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "call random"
+
+[node name="chooseBTN2" type="OptionButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = 58.5
+offset_right = 96.5
+offset_bottom = 113.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_c74qd")
+item_count = 4
+popup/item_0/text = "johnPork"
+popup/item_0/id = 0
+popup/item_1/text = "freakDog"
+popup/item_1/id = 1
+popup/item_2/text = "pDiddy"
+popup/item_2/id = 2
+popup/item_3/text = ""
+popup/item_3/id = 3
+
+[node name="lblCall" type="Label" parent="Control/chooseBTN2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -125.5
+offset_top = -21.0
+offset_right = -41.5
+offset_bottom = 24.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.960784, 0.847059, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "CALL:"
+
+[node name="pnl_header" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -357.5
+offset_right = 357.5
+offset_bottom = 171.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yfpix")
+
+[node name="lblContacts" type="Label" parent="pnl_header"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.5
+offset_top = -44.0
+offset_right = 165.5
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "CONTACTS"
+
+[node name="btn_File" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.5
+offset_top = -172.0
+offset_right = 88.5
+offset_bottom = -119.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_uek1w")
+text = "Change background"
+
+[node name="FileDialog" type="FileDialog" parent="btn_File"]
+disable_3d = true
+title = "Open a File"
+initial_position = 1
+size = Vector2i(670, 318)
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+
+[connection signal="pressed" from="Control/chooseBTN" to="." method="_on_choose_btn_pressed"]
+[connection signal="item_selected" from="Control/chooseBTN2" to="." method="_on_choose_btn_2_item_selected"]
+[connection signal="pressed" from="btn_File" to="." method="_on_btn_file_pressed"]
+[connection signal="file_selected" from="btn_File/FileDialog" to="." method="_on_file_dialog_file_selected"]

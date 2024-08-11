@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5s5utfjsyq4f"
+path="res://.godot/imported/Apple iphone  6 Original Ringtone Sound Effect.mp3-a3fd28bfa00e70faa70401aa1687eb64.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Ringtones/Apple iphone  6 Original Ringtone Sound Effect.mp3"
+dest_files=["res://.godot/imported/Apple iphone  6 Original Ringtone Sound Effect.mp3-a3fd28bfa00e70faa70401aa1687eb64.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
