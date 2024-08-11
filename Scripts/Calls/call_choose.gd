@@ -10,7 +10,7 @@ func _ready():
 	init_SelectButton()
 
 func init_SelectButton():
-	$Control/chooseBTN2.clear()
+	#$Control/chooseBTN2.clear() # don't clear for now, just add
 	var list_ = CallManage.callers
 	for i in list_:
 		#print(i["name"])
@@ -96,3 +96,8 @@ func _on_file_dialog_file_selected(path):
 	imgTextureNew.set_image(imgNEW)
 	
 	$TextureRect.texture = imgTextureNew
+
+
+func _on_btn_tap_screen_pressed():
+	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Scenes/Game-replica/click_me_screen.tscn")

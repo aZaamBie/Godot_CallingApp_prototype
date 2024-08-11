@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnjtw6v2gd5rv"]
+[gd_scene load_steps=7 format=3 uid="uid://dnjtw6v2gd5rv"]
 
 [ext_resource type="Script" path="res://Scripts/Calls/call_choose.gd" id="1_v3eve"]
 
@@ -32,6 +32,16 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 shadow_size = 3
 shadow_offset = Vector2(0, 0.66)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awe3l"]
+bg_color = Color(0.6, 0, 0.101961, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+shadow_offset = Vector2(0.675, 3.11)
 
 [node name="call_Choose" type="Control"]
 layout_mode = 3
@@ -105,15 +115,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_c74qd")
-item_count = 4
-popup/item_0/text = "johnPork"
+item_count = 1
+popup/item_0/text = "Null"
 popup/item_0/id = 0
-popup/item_1/text = "freakDog"
-popup/item_1/id = 1
-popup/item_2/text = "pDiddy"
-popup/item_2/id = 2
-popup/item_3/text = ""
-popup/item_3/id = 3
 
 [node name="lblCall" type="Label" parent="Control/chooseBTN2"]
 layout_mode = 1
@@ -181,8 +185,27 @@ size = Vector2i(670, 318)
 ok_button_text = "Open"
 file_mode = 0
 access = 2
+root_subfolder = "/storage/emulated/0"
+
+[node name="btn_TapScreen" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -317.0
+offset_right = 96.0
+offset_bottom = -242.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_awe3l")
+text = "TAP ME!!"
 
 [connection signal="pressed" from="Control/chooseBTN" to="." method="_on_choose_btn_pressed"]
 [connection signal="item_selected" from="Control/chooseBTN2" to="." method="_on_choose_btn_2_item_selected"]
 [connection signal="pressed" from="btn_File" to="." method="_on_btn_file_pressed"]
 [connection signal="file_selected" from="btn_File/FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="pressed" from="btn_TapScreen" to="." method="_on_btn_tap_screen_pressed"]

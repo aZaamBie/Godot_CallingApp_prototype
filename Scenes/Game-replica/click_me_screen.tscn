@@ -1,0 +1,141 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2la6rhnir5fl"]
+
+[ext_resource type="Texture2D" uid="uid://d1f1uyywdentn" path="res://Assets/Textures/pfp_pDiddy02.jpeg" id="1_kd5v5"]
+[ext_resource type="Script" path="res://Scripts/MiniGames/ClickMe_Manage.gd" id="1_m8nrj"]
+[ext_resource type="Texture2D" uid="uid://v2cc60430lor" path="res://icon.svg" id="2_glhq5"]
+
+[sub_resource type="Curve" id="Curve_vyp0p"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.84153, 0.901099), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jg5ps"]
+bg_color = Color(0.541176, 0.270588, 0, 1)
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ltqp0"]
+bg_color = Color(0.533333, 0, 0.0588235, 1)
+
+[node name="clickMe_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m8nrj")
+
+[node name="bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.176471, 0.0627451, 0.12549, 1)
+
+[node name="lblTitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -303.0
+offset_top = 30.0
+offset_right = 303.0
+offset_bottom = 99.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Tap on the: Meat Master!"
+
+[node name="tapFX" type="CPUParticles2D" parent="."]
+position = Vector2(360, 646)
+emitting = false
+amount = 16
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+randomness = 1.0
+texture = ExtResource("2_glhq5")
+emission_shape = 3
+emission_rect_extents = Vector2(100, 100)
+direction = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(0, -980)
+initial_velocity_min = 300.0
+initial_velocity_max = 500.0
+angular_velocity_min = 50.0
+angular_velocity_max = 100.0
+linear_accel_max = 71.29
+scale_amount_curve = SubResource("Curve_vyp0p")
+
+[node name="btnTexture" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.5
+offset_top = -125.5
+offset_right = 199.5
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_kd5v5")
+stretch_mode = 0
+
+[node name="tapCounter" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.781
+anchor_right = 0.5
+anchor_bottom = 0.781
+offset_left = -68.0
+offset_top = -33.6801
+offset_right = 60.0
+offset_bottom = 33.3199
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_jg5ps")
+text = "TAPS: 0"
+
+[node name="btnReset" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -97.0
+offset_right = -29.0
+offset_bottom = -22.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_ltqp0")
+text = "RESET!"
+
+[node name="btnBack" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = -96.0
+offset_right = 186.0
+offset_bottom = -21.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_ltqp0")
+text = "BACK"
+
+[connection signal="pressed" from="btnTexture" to="." method="_on_btn_texture_pressed"]
+[connection signal="pressed" from="btnReset" to="." method="_on_btn_reset_pressed"]
+[connection signal="pressed" from="btnBack" to="." method="_on_btn_back_pressed"]
