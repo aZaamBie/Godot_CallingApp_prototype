@@ -12,7 +12,7 @@ config_version=5
 
 config/name="CallJohnPork"
 run/main_scene="res://Scenes/Calls/call_choose.tscn"
-config/features=PackedStringArray("4.2", "Mobile")
+config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -24,6 +24,8 @@ CallManage="*res://Scenes/Calls/call_manage.tscn"
 
 window/size/viewport_width=720
 window/size/viewport_height=1280
+window/size/borderless=true
+window/size/always_on_top=true
 window/size/transparent=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"

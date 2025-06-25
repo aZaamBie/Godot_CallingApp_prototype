@@ -1,6 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dnjtw6v2gd5rv"]
 
-[ext_resource type="Script" path="res://Scripts/Calls/call_choose.gd" id="1_v3eve"]
+[ext_resource type="Script" uid="uid://bjskb2jprpyyn" path="res://Scripts/Calls/call_choose.gd" id="1_v3eve"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfpix"]
+bg_color = Color(0.298039, 0.105882, 0.211765, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6iu0"]
 bg_color = Color(0.254902, 0.254902, 0.254902, 1)
@@ -20,9 +23,6 @@ corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfpix"]
-bg_color = Color(0.298039, 0.105882, 0.211765, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uek1w"]
 bg_color = Color(0.470588, 0.168627, 0.333333, 1)
@@ -68,6 +68,33 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="pnl_header" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -357.5
+offset_right = 357.5
+offset_bottom = 171.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yfpix")
+
+[node name="lblContacts" type="Label" parent="pnl_header"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.5
+offset_top = -44.0
+offset_right = 165.5
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "CONTACTS"
 
 [node name="Control" type="Panel" parent="."]
 layout_mode = 1
@@ -133,34 +160,8 @@ theme_override_colors/font_color = Color(0.960784, 0.847059, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "CALL:"
 
-[node name="pnl_header" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -357.5
-offset_right = 357.5
-offset_bottom = 171.0
-grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_yfpix")
-
-[node name="lblContacts" type="Label" parent="pnl_header"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -165.5
-offset_top = -44.0
-offset_right = 165.5
-offset_bottom = 44.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 64
-text = "CONTACTS"
-
 [node name="btn_File" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -188,6 +189,7 @@ access = 2
 root_subfolder = "/storage/emulated/0"
 
 [node name="btn_TapScreen" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -203,6 +205,38 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_awe3l")
 text = "TAP ME!!"
+
+[node name="VScrollBar" type="VScrollBar" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -240.0
+offset_bottom = 240.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -352.0
+offset_right = 352.0
+offset_bottom = 376.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="ScrollContainer"]
+layout_mode = 2
 
 [connection signal="pressed" from="Control/chooseBTN" to="." method="_on_choose_btn_pressed"]
 [connection signal="item_selected" from="Control/chooseBTN2" to="." method="_on_choose_btn_2_item_selected"]

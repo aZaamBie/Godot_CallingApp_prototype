@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://uq46rsjlbj02"]
 
-[ext_resource type="Script" path="res://Scripts/Calls/call_answer.gd" id="1_c4syq"]
+[ext_resource type="Script" uid="uid://4chkdhnca774" path="res://Scripts/Calls/call_answer.gd" id="1_c4syq"]
 [ext_resource type="Texture2D" uid="uid://bmxahyi730i6a" path="res://Assets/UI/decline_icon.png" id="1_nyen6"]
 [ext_resource type="AudioStream" uid="uid://jfvxjh7cir1o" path="res://Assets/Audio/Voices/what is simon waffling about.mp3" id="3_4sbae"]
-[ext_resource type="VideoStream" path="res://Assets/Videos/John pork.ogv" id="4_w2uar"]
+[ext_resource type="VideoStream" uid="uid://fkn0gg8jshiw" path="res://Assets/Videos/John pork.ogv" id="4_w2uar"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3eor"]
 bg_color = Color(0.176471, 0.176471, 0.176471, 0.690196)

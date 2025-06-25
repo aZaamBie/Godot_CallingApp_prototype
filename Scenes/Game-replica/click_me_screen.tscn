@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://d2la6rhnir5fl"]
 
 [ext_resource type="Texture2D" uid="uid://d1f1uyywdentn" path="res://Assets/Textures/pfp_pDiddy02.jpeg" id="1_kd5v5"]
-[ext_resource type="Script" path="res://Scripts/MiniGames/ClickMe_Manage.gd" id="1_m8nrj"]
+[ext_resource type="Script" uid="uid://bejxap78nh2tq" path="res://Scripts/MiniGames/ClickMe_Manage.gd" id="1_m8nrj"]
 [ext_resource type="Texture2D" uid="uid://v2cc60430lor" path="res://icon.svg" id="2_glhq5"]
 
 [sub_resource type="Curve" id="Curve_vyp0p"]
@@ -54,11 +54,11 @@ text = "Tap on the: Meat Master!"
 position = Vector2(360, 646)
 emitting = false
 amount = 16
+texture = ExtResource("2_glhq5")
 one_shot = true
 speed_scale = 2.0
 explosiveness = 1.0
 randomness = 1.0
-texture = ExtResource("2_glhq5")
 emission_shape = 3
 emission_rect_extents = Vector2(100, 100)
 direction = Vector2(1, 1)
